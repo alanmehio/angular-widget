@@ -1,0 +1,76 @@
+// Dont want navs to collapse
+@grid-float-breakpoint: 10px;
+
+// Basics of a navbar
+@navbar-height: 60px;
+@navbar-margin-bottom: 0;
+@navbar-border-radius: 0;
+
+@navbar-default-color: @gray-dark;
+@navbar-default-bg: @gray-light;
+@navbar-default-border: none;
+
+// Navbar links
+@navbar-default-link-color: @navbar-default-color;
+@navbar-default-link-hover-color: none;
+@navbar-default-link-hover-bg: @gray;
+@navbar-default-link-active-color: @gray-darker;
+@navbar-default-link-active-bg: @gray;
+@navbar-default-link-disabled-color: #ccc;
+@navbar-default-link-disabled-bg: transparent;
+
+// Navbar brand label
+@navbar-default-brand-color: #000;
+@navbar-default-brand-hover-color: none;
+@navbar-default-brand-hover-bg: transparent;
+
+// Navbar toggle
+@navbar-default-toggle-hover-bg: #ddd;
+@navbar-default-toggle-icon-bar-bg: #888;
+@navbar-default-toggle-border-color: #ddd;
+
+.header-side-padding {
+  padding-left: @padding-large-horizontal;
+  padding-right: @padding-large-horizontal;
+
+  @media (min-width: @screen-sm) {
+    padding-left: @padding-large-horizontal * 2;
+    padding-right: @padding-large-horizontal * 2;
+  }
+}
+
+nav.sjv-header {
+  border: none;
+  div.navbar-header {
+    a.navbar-brand {
+      .header-side-padding;
+    }
+  }
+
+  ul.navbar-nav {
+    li {
+      a {
+        .header-side-padding;
+      }
+    }
+  }
+
+  form.navbar-form {
+    div.form-group {
+      display: inline-block;
+      margin-bottom: 0px;
+    }
+    .header-side-padding;
+  }
+
+  ul.navbar-right {
+    li {
+      img.sjv-logo {
+        @image-height: 40px;
+        height: @image-height;
+        width: 50px;
+        margin: ((@navbar-height - @image-height) / 2) @padding-large-horizontal;
+      }
+    }
+  }
+}

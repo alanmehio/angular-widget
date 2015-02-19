@@ -27,7 +27,7 @@
                   '<span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>' +
                 '<h4 class="modal-title">{{title}}</h4>' +
               '</div>' +
-              '<div class="modal-body"><span ng-transclude></span></div>' +
+              '<div class="modal-body" ng-transclude></div>' +
               '<div class="modal-footer">' +
                 '<button class="btn btn-primary" ng-click="apply(\'ok\')">{{btnOkLabel}}</button>' +
                 '<button ng-hide="hideCancel && hideCancel==\'true\'" ' +

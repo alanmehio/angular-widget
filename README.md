@@ -8,13 +8,13 @@ Directives, filter och komponenter för allehanda ändamål.
 
 ## Download
 
-* [Individual files](https://github.com/jordbruksverket/angular-widget) ([minified](https://raw.githubusercontent.com/jordbruksverket/angular-form/master/dist/sjv-form.min.js))<br>
+* [Individual files](https://github.com/jordbruksverket/angular-widget) ([minified](https://raw.githubusercontent.com/jordbruksverket/angular-widget/master/dist/sjv-ng-widget.min.js))<br>
 
   
 Lägg till följande i bower.json
 ```js
    "dependencies": {
-    "sjv-form": "https://github.com/jordbruksverket/angular-widget.git#0.0.1"
+    "sjv-form": "https://github.com/jordbruksverket/angular-widget.git#0.0.2"
   }
 ```
 
