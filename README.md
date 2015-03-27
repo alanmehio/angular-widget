@@ -14,7 +14,7 @@ Directives, filter och komponenter för allehanda ändamål.
 Lägg till följande i bower.json
 ```js
    "dependencies": {
-    "sjv-form": "https://github.com/jordbruksverket/angular-widget.git#0.0.2"
+    "sjv-form": "https://github.com/jordbruksverket/angular-widget.git#0.0.3"
   }
 ```
 
