@@ -27,7 +27,7 @@
                   '<span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>' +
                 '<h4 class="modal-title">{{title}}</h4>' +
               '</div>' +
-              '<div class="modal-body" ng-transclude></div>' +
+              '<div class="modal-body"><span ng-transclude></span></div>' +
               '<div class="modal-footer">' +
                 '<button class="btn btn-primary" ng-click="apply(\'ok\')">{{btnOkLabel}}</button>' +
                 '<button ng-hide="hideCancel && hideCancel==\'true\'" ' +
@@ -49,6 +49,7 @@
         if (scope.title === undefined) {
           scope.title = 'Var god bekräfta';
         }
+
         scope.btnOkLabel = (scope.okLabel !== undefined) ? scope.okLabel : 'OK';
         scope.btnCancelLabel = (scope.cancelLabel !== undefined) ? scope.cancelLabel : 'Avbryt';
 
@@ -77,7 +78,11 @@
           if (action === 'cancel' && scope.cancelFn()) {
             scope.cancelFn().call(null, 'cancel');
           } else if (action === 'ok' && scope.okFn()) {
-            scope.okFn().call(null, 'ok');
+            var okReturnValue = scope.okFn().call(null, 'ok');
+            if (okReturnValue !== undefined && !okReturnValue) {
+              // okFn returnerade false, så stäng inte fönstret
+              return; 
+            }
           }
           closeModal();
         };
