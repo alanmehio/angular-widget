@@ -57,6 +57,13 @@
 
           if (newValue) {
             element.modal('show');
+
+            if (window.frameElement) {
+                //Fixa positionering i iframe 
+                var scrollTop  = window.parent.pageYOffset || window.parent.document.documentElement.scrollTop || 0
+                element.css('top', scrollTop);
+            }
+
             element.on('hide.bs.modal', function() {
               scope.showCondition = false;
             });

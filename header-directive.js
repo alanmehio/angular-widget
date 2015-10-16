@@ -24,7 +24,7 @@
  </sjv-header>
 */
 
-(function (module) {
+(function () {
 	'use strict';
 
 	function sjvHeader() {
@@ -81,8 +81,14 @@
 				logoSrc: "@logoSrc"}
 		};
 	}
-	module.directive('sjvHeader', sjvHeader);
 
+	angular.module('sjvHeaderDirective', ['sjvHeaderController'])
+		.directive('sjvHeader', sjvHeader);
+
+})();
+
+(function () {
+	'use strict';
 
 	function sjvHeaderController($location) {
 		var vm = this; // jshint ignore:line
@@ -100,6 +106,13 @@
 			return link === '-';
 		};
 	}
-	module.controller('sjvHeaderController', ['$location', sjvHeaderController]);
 
-})(angular.module('sjv-widget.directives') );
+	angular.module('sjvHeaderController', [])
+		.controller('sjvHeaderController', ['$location', sjvHeaderController]);
+})();
+
+(function () {
+	'use strict';
+	angular.module('sjvHeader', ['sjvHeaderDirective']);
+})();
+
