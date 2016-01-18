@@ -29,9 +29,9 @@
               '</div>' +
               '<div class="modal-body"><span ng-transclude></span></div>' +
               '<div class="modal-footer">' +
-                '<button class="btn btn-primary" ng-click="apply(\'ok\')">{{btnOkLabel}}</button>' +
+                '<button class="btn btn-primary" ng-click="apply(\'ok\')">{{okLabel}}</button>' +
                 '<button ng-hide="hideCancel && hideCancel==\'true\'" ' +
-                  'class="btn btn-default" ng-click="apply(\'cancel\')">{{btnCancelLabel}}</button>' +
+                  'class="btn btn-default" ng-click="apply(\'cancel\')">{{cancelLabel}}</button>' +
               '</div>' +
             '</div>' +
           '</div>' +
@@ -50,8 +50,8 @@
           scope.title = 'Var god bekräfta';
         }
 
-        scope.btnOkLabel = (scope.okLabel !== undefined) ? scope.okLabel : 'OK';
-        scope.btnCancelLabel = (scope.cancelLabel !== undefined) ? scope.cancelLabel : 'Avbryt';
+        scope.okLabel = (scope.okLabel !== undefined) ? scope.okLabel : 'OK';
+        scope.cancelLabel = (scope.cancelLabel !== undefined) ? scope.cancelLabel : 'Avbryt';
 
         scope.$watch('showCondition', function(newValue) {
 
